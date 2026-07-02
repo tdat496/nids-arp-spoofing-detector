@@ -3,8 +3,8 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-Hệ thống phát hiện ARP Spoofing tự động với khả năng giám sát mạng 24/7.
-
+### Hệ thống phát hiện ARP Spoofing tự động với khả năng giám sát mạng 24/7.
+## Tính năng
 **Hybrid Detection**: Active Scan + Passive Monitoring
 **Real-time Alerts**: Telegram notifications
 **Auto Network Discovery**: Tự động phát hiện network
@@ -13,8 +13,7 @@ Hệ thống phát hiện ARP Spoofing tự động với khả năng giám sát
 **24/7 Monitoring**: Systemd service
 **Zero Configuration**: Không cần hardcode MAC
 
-###Kiến trúc hệ thống
-
+### Kiến trúc hệ thống
 ┌─────────────────────────────────────────┐
 │ NIDS Hybrid Detector │
 ├─────────────────────────────────────────┤
@@ -34,7 +33,7 @@ Hệ thống phát hiện ARP Spoofing tự động với khả năng giám sát
 │ └─ SQLite database │
 └─────────────────────────────────────────┘
 
-###Cài đặt:
+## Cài đặt:
 
 ### Yêu cầu
 
@@ -58,16 +57,16 @@ nano nids_hybrid.py
 # self.TELEGRAM_TOKEN = "your_token"
 # self.CHAT_ID = "your_chat_id"
 
-###Sử dụng
+### Sử dụng
 
-###Chạy thủ công
+### Chạy thủ công
 sudo python3 nids_hybrid.py
 
-###Chạy như service (24/7)
+### Chạy như service (24/7)
 # Tạo service
 sudo nano /etc/systemd/system/nids-detector.service
 
-###Nội dung service:
+### Nội dung service:
 [Unit]
 Description=NIDS ARP Spoofing Detector
 After=network.target
@@ -83,13 +82,13 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 
-###Kích hoạt:
+### Kích hoạt:
 sudo systemctl daemon-reload
 sudo systemctl enable nids-detector
 sudo systemctl start nids-detector
 sudo systemctl status nids-detector
 
-###Cơ chế hoạt động:
+### Cơ chế hoạt động:
 ### Nguyên lý:
 Mỗi IP CHỈ CÓ 1 MAC address hợp lệ
 Nếu 1 IP có NHIỀU MAC → ARP SPOOFING
@@ -109,14 +108,14 @@ Nếu 1 IP có NHIỀU MAC → ARP SPOOFING
    - Quét lại subnet
    - Update baseline
 
-##  Ví dụ phát hiện
+## Ví dụ phát hiện
 
 Bình thường:192.168.32.2 → 00:50:56:E0:A7:74 (Gateway)
 Khi bị spoofing:192.168.32.2 → 00:50:56:E0:A7:74 (Thật)
                 192.168.32.2 → 00:0C:29:DA:B6:80 (Giả mạo)
 
 
-##Tech Stack
+## Tech Stack
 
 - Python 3.8: Ngôn ngữ chính
 - Scapy: Packet manipulation
@@ -124,16 +123,16 @@ Khi bị spoofing:192.168.32.2 → 00:50:56:E0:A7:74 (Thật)
 - Telegram Bot API: Alerts
 - Systemd: Service management
 
-##License
+## License
 
 MIT License - xem file [LICENSE](LICENSE)
 
-##Disclaimer
+## Disclaimer
 
 Chỉ sử dụng cho mục đích **học tập và nghiên cứu**. 
 Không sử dụng cho mục đích xấu.
 
-##Author
+## Author
 Nguyen Trung Dat
 Cybersecurity Student  
 GitHub: github.com/tdat496
