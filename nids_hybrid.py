@@ -42,8 +42,14 @@ class NIDSHybridDetector:
             '001247': 'Samsung',
         }
         
-        self.TELEGRAM_TOKEN = "8535457723:AAH0TGnsx-_GgpDlDbVbEKOgddMeuvcBAhU"
-        self.CHAT_ID = "6720425947"
+        try:
+            from config import TELEGRAM_TOKEN, CHAT_ID
+            self.TELEGRAM_TOKEN = TELEGRAM_TOKEN
+            self.CHAT_ID = CHAT_ID
+        except ImportError:
+            print("[!] config.py not found. Using default values.")
+            self.TELEGRAM_TOKEN = "YOUR_TOKEN_HERE"
+            self.CHAT_ID = "YOUR_CHAT_ID_HERE"
         
         self.db_path = 'nids.db'
         self.init_db()
