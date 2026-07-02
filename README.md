@@ -5,13 +5,13 @@
 
 ### Hệ thống phát hiện ARP Spoofing tự động với khả năng giám sát mạng 24/7.
 ## Tính năng
-**Hybrid Detection**: Active Scan + Passive Monitoring
-**Real-time Alerts**: Telegram notifications
-**Auto Network Discovery**: Tự động phát hiện network
-**Periodic Scanning**: Quét mỗi 5 phút
-**Database Logging**: SQLite lưu trữ
-**24/7 Monitoring**: Systemd service
-**Zero Configuration**: Không cần hardcode MAC
+- **Hybrid Detection**: Active Scan + Passive Monitoring
+- **Real-time Alerts**: Telegram notifications
+- **Auto Network Discovery**: Tự động phát hiện network
+- **Periodic Scanning**: Quét mỗi 5 phút
+- **Database Logging**: SQLite lưu trữ
+- **24/7 Monitoring**: Systemd service
+- **Zero Configuration**: Không cần hardcode MAC
 
 ### Kiến trúc hệ thống
 - NIDS Hybrid Detector
