@@ -14,24 +14,19 @@
 **Zero Configuration**: Không cần hardcode MAC
 
 ### Kiến trúc hệ thống
-┌─────────────────────────────────────────┐
-│ NIDS Hybrid Detector │
-├─────────────────────────────────────────┤
-│ Active Scanner (mỗi 5 phút) │
-│ ├─ ARP scan toàn bộ subnet │
-│ ├─ Build/update baseline │
-│ └─ Detect new devices │
-├─────────────────────────────────────────┤
-│ Passive Monitor (real-time) │
-│ ├─ Listen ARP traffic │
-│ ├─ Compare với baseline │
-│ └─ Alert on conflicts │
-├─────────────────────────────────────────┤
-│ Alert System │
-│ ├─ Telegram notifications │
-│ ├─ Terminal output │
-│ └─ SQLite database │
-└─────────────────────────────────────────┘
+- NIDS Hybrid Detector
+  - Active Scanner (mỗi 5 phút)
+     - ARP scan toàn bộ subnet 
+     - Build/update baseline 
+     - Detect new devices 
+  - Passive Monitor (real-time) 
+     - Listen ARP traffic 
+     - Compare với baseline
+     - Alert on conflicts 
+  - Alert System 
+     - Telegram notifications 
+     - Terminal output 
+     - SQLite database 
 
 ## Cài đặt:
 
