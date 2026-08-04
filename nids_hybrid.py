@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-NIDS - Hybrid Active+Passive ARP Spoofing Detector
-Scan interval: 5 minutes | Auto vendor detection
-"""
 from scapy.all import sniff, ARP, Ether, srp
 from datetime import datetime, timedelta
 import sqlite3
